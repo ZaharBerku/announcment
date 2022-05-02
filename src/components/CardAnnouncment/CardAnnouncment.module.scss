@@ -1,0 +1,106 @@
+@import "../../style/variabels.scss";
+@import "../../style/mixins.scss";
+
+.formCard{
+    border-radius: 12px;
+    background-color: $fourth-color;
+    position: relative;
+    max-width:380px;
+    min-height:420px;
+    width: 100%;
+    height: 100%;
+    padding: 35px 35px 25px;
+    @include flex-container;
+    flex-direction: column;
+    align-items: flex-start;
+    &Btn{
+        @include flex-container;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 7px;
+        height: 32px;
+        align-self: end;
+        margin-bottom: 32px;
+        span,
+        &::after,
+        &::before{
+            content: "";
+            display: block;
+            background: #292A2E;
+            border-radius: 50%;
+            width: 7px;
+            height: 7px;
+        };
+    };
+    &BtnSave{
+        font-weight: 700;
+        font-size: 15.8948px;
+        line-height: 19px;
+        color: #006CC3;
+        align-self: end;
+        margin-bottom: 32px;
+        height: 32px;
+    };
+    &Label{
+        width: 100%;
+    };
+    &LabelFile{
+        position: relative;
+        width: 312.79px;
+        height: 149.01px;
+        border-radius: 14.9014px;
+        top: 0;
+        left: 0;
+        font-weight: 700;
+        font-size: 15.8948px;
+        line-height: 19px;
+        @include flex-container;
+        color: $fourth-color;
+        background-color: rgba(21, 22, 26, 0.51);
+    };
+    &Img{
+        width: 312.79px;
+        height: 149.01px;
+        border-radius: 14.9014px;
+        position: absolute;
+    };
+    &InputFile{
+        text-indent: 100%;
+        display: none;
+    };
+    &TextArea{
+        border: none;
+        color: #15161A;
+        width: 100%;
+        background-color: transparent;
+        &::-webkit-scrollbar{
+            width: 0;
+          };
+    };
+    &Name{
+        font-weight: 700;
+        font-size: 17.8817px;
+        line-height: 22px;
+        margin-top: 15px;
+        margin-bottom: 8px;
+    };
+    &Description{
+        font-weight: 400;
+        font-size: 15.8948px;
+        line-height: 19px;
+        display: block;
+    }; 
+    &EditImg{
+        opacity: 0.2;
+    };
+    &EditTextArea{
+        color: #828E98;
+    };
+    &Date{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $primary-color;
+        margin-top: 22px;
+    };
+};

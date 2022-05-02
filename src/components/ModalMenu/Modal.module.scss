@@ -1,0 +1,62 @@
+@import "../../style/variabels.scss";
+@import "../../style/mixins.scss";
+.backGround{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0px;
+    border-radius: 12px;
+    right: 0px;
+};
+.modal{
+    @include flex-container;
+    flex-direction: column;
+    top: 81px;
+    right: 15px;
+    position: absolute;
+    align-items: flex-start;
+    background-color: $fourth-color;
+    gap: 1px;
+    border-radius: 8px;
+    z-index: 5;
+    width: 175px;
+    height: 100px;
+    padding: 18px;
+    &BtnCloses{
+        width: 13px;
+        height: 13px;
+        align-self: end;
+        position: relative;
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            height: 1.5px;
+            width: 100%;
+            background-color: #15161A;
+        };
+        &::before{
+            transform: rotate(45deg)
+        };
+        &::after{
+            transform: rotate(-45deg)
+
+        };
+    };
+    &Btn{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+    };
+    &BtnEdit{
+        margin-bottom: 14px;
+        color: #292A2E;
+    };
+    &BtnDelete{
+        color: #F83333;
+    };
+};

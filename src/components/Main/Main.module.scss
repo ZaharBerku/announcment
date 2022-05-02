@@ -1,0 +1,40 @@
+@import "../../style/mixins.scss";
+
+.main{
+    padding-bottom: 200px;
+    &Background{
+        background-image: url("../../assets/images/background.png");
+        background-size: cover;
+        height: 407px;
+    };
+    &ContainerFormSearch{
+        width: 100%;
+        position: relative;
+        margin-bottom: 92px;
+    };
+    &FormSearch{
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+
+    };
+    &ContainerCard{
+        padding: 0px 150px;
+        @include flex-container;
+        justify-content: start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 21px;
+    };
+    &ContainerText{
+        justify-content: center;
+    };
+    &AlternativeText{
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 119%;
+        color: #a5a5a5;
+    };
+};

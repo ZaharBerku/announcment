@@ -1,0 +1,41 @@
+@import "./variabels.scss";
+
+
+@mixin flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+
+@mixin primary-btn{
+    border-radius: 30px;
+    background-color: $secondary-color;
+    padding: 17px 60px;
+    border: 1px solid $secondary-color;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: $fourth-color;
+};
+
+@mixin phone {
+    @media (min-width:#{$width-mobile}) and (max-width: #{$width-tablet - 1px}){
+        @content
+    }; 
+};
+@mixin tablet {
+    @media (min-width:#{$width-tablet}) and (max-width: #{$width-desktop - 1px}){
+        @content
+    };
+};
+@mixin desktop {
+    @media (min-width:#{$width-desktop}){
+        @content
+    };
+};
+@mixin adaptiv-font($pcSize,$mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.4;
+    font-size: calc(#{$mobSize + 'px'} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+};

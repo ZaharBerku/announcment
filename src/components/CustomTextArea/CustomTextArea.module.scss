@@ -1,0 +1,40 @@
+@import "../../style/variabels.scss";
+.error{
+    border: 1px solid red;
+};
+.textError{
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    left: 20px
+};
+.description{
+    &TeaxtArea{
+        float: left;
+        width: 190px;
+        height: 20px;
+        overflow: hidden;
+        transition: 400ms;
+    };
+    &Btn{
+        text-decoration: underline;
+        font-weight: 400;
+        font-size: 15.8948px;
+        color: $secondary-color;
+        line-height: 19px;
+        margin-left: 10px;
+    };
+    &OpenDescription{
+        width: 100%;
+        float: none;
+        height: 100px;
+        overflow:scroll;
+    };
+    &Container{
+        display: inline-block;
+    };
+    &ContainerBtn{
+        text-align: right;
+        display: block;
+    };
+};

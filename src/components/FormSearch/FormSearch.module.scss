@@ -1,0 +1,25 @@
+@import "../../style/variabels.scss";
+@import "../../style/mixins.scss";
+.form{
+    background: $fourth-color;
+    box-shadow: 0px 4px 4px rgba(6, 7, 12, 0.14);
+    border-radius: 30px;
+    height: 72px; 
+    max-width: 582px;
+    @include flex-container;
+    justify-content: flex-start;
+    padding: 0px 26px;
+    gap: 13px;
+    &Btn{
+        border: none;
+        background-color: transparent;
+    };
+    &InputSearch{
+        width: 100%;
+        border: none;
+        background-color: transparent;
+    };
+    &LabelSearch{
+        width: 100%;
+    };
+};
