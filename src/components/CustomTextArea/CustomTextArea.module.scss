@@ -1,20 +1,25 @@
 @import "../../style/variabels.scss";
 .error{
     border: 1px solid red;
+    border-radius: 13px;
 };
 .textError{
     position: absolute;
     font-size: 14px;
     color: red;
-    left: 20px
+    left: 0px;
+    top: 69px;
 };
 .description{
+    position: relative;
     &TeaxtArea{
         float: left;
         width: 190px;
         height: 20px;
         overflow: hidden;
         transition: 400ms;
+        border-radius: 13px;
+    
     };
     &Btn{
         text-decoration: underline;

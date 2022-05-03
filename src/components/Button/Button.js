@@ -13,11 +13,9 @@ Button.propTypes = {
         PropTypes.string,
         PropTypes.element
       ]),
-    field: PropTypes.object,
 };
 Button.propTypes = {
-    children: "",
-    field: {},
+    children: ()=>{},
 };
 
 export default Button;

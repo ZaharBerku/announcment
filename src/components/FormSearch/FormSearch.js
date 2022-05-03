@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Formik, Form, Field } from "formik";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./FormSearch.module.scss";
 import Input from "../Input";
 import Button from "../Button";
-import {ReactComponent as Search} from "../../assets/icons/search.svg";
+import { ReactComponent as Search } from "../../assets/icons/search.svg";
 import throttle from "../../util/throttle";
 import { getValuesWithForm } from "../../util/getValuesWithForm";
 import createActions from "../../store/createActions";
@@ -19,26 +20,44 @@ const FormSearch = (props) => {
     const newThrottle = throttle(dispatch, setIsHide, 400);
 
     const handelInput = (event) => {
-        const {search} = getValuesWithForm(event);
+        const { search } = getValuesWithForm(event);
         newThrottle(search, data);
+
+    };
+    const handelSubmit = (values)=>{
+        console.log(values);
+    };
+    const initialValues = {
+        search:""
     };
 
     const { additionalClassNames } = props;
 
     return (
-                    <form onInput={handelInput} className={classNames(styles.form, additionalClassNames)}>
+        <Formik
+            initialValues={initialValues}
+            onSubmit={handelSubmit}>
+            {() => {
+                return (
+                    <Form onInput={handelInput} className={classNames(styles.form, additionalClassNames)}>
                         <Button className={styles.formBtn} type="submit">
-                            <Search/>
+                            <Search />
                         </Button>
-                        <Input
+                        <Field
                             type="search"
                             name="search"
                             placeholder="Search..."
                             className={styles.formInputSearch}
                             classNameLabel={styles.formLabelSearch}
+                            component={Input}
                         />
-                    </form>
+                    </Form>
                 );
+            }}
+
+        </Formik >
+
+    );
 };
 
 FormSearch.propTypes = {
@@ -49,4 +68,4 @@ FormSearch.defaultProp = {
     additionalClassNames: "",
 };
 
-export default FormSearch;
+export default React.memo(FormSearch);

@@ -10,12 +10,12 @@ import Button from "../Button";
 const CustomTextArea = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const [field, meta] = useField(props);
-    const { label, classNameLabel, className, customChange, ...customnTextarea } = props;
+    const { label, classNameLabel, className, ...customnTextarea } = props;
     const { name, value, ...newFiled } = field;
-    const { errors, touched } = meta;
-    const isError = touched[name] && errors[name];
+    const { error, touched } = meta;
+    const isError = touched && error;
     const isDone = name === "description" && value.length > 22 && customnTextarea.disabled;
-
+        console.log(meta);
     return (
         <div className={classNames(classNameLabel, styles.description)}>
             {label}
@@ -33,27 +33,21 @@ const CustomTextArea = (props) => {
                 <Button type="button" onClick={()=>setIsOpen(!isOpen)} 
                 className={styles.descriptionBtn}>{isOpen ? "Hide" : "Show more"}</Button>
             </div>}
-            {isError && <span className={styles.textError}>{errors[name]}</span>}
+            {isError && <span className={styles.textError}>{error}</span>}
         </div>
     );
 };
 
 CustomTextArea.propTypes = {
-    form: PropTypes.object,
-    field: PropTypes.object,
     label: PropTypes.string,
     classNameLabel: PropTypes.string,
     className: PropTypes.string,
-    customChange: PropTypes.any
 };
 
 CustomTextArea.defaultProps = {
-    form: {},
-    field: {},
     label: "",
     classNameLabel: "",
     className: "",
-    customChange: null
 };
 
 export default CustomTextArea;

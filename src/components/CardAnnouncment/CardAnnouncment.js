@@ -31,7 +31,7 @@ const CardAnnouncment = (props) => {
     };
 
     const handelSubmit = (values) => {
-        const newValue = { ...values, ["photo"]: (photo || photoCard), date, isHide };
+        const newValue = { ...values, ["photo"]: (photo || photoCard), date, isHide, id };
         dispatch(editData(newValue, id));
         setIsDisabled(true);
     };
@@ -44,7 +44,7 @@ const CardAnnouncment = (props) => {
         description: yup.string()
             .required("Need to enter text")
             .min(10, "Minimum 10 words")
-            .matches(/[A-Za-z/s]/, "Only latin")
+            .matches(/[^A-Za-z/s]/, "Only latin")
 
     });
     return (
@@ -96,7 +96,6 @@ const CardAnnouncment = (props) => {
                             component={Input}
                         />
                         <CustomTextArea
-                            id="name"
                             name="name"
                             disabled={isDisabled}
                             classNameLabel={styles.formCardLabel}
@@ -106,7 +105,6 @@ const CardAnnouncment = (props) => {
                                     { [styles.formCardEditTextArea]: !isDisabled })}
                         />
                         <CustomTextArea
-                            id="description"
                             name="description"
                             disabled={isDisabled}
                             classNameLabel={styles.formCardLabel}
@@ -137,9 +135,9 @@ CardAnnouncment.propTypes = {
     isOpenModal: PropTypes.bool
 };
 CardAnnouncment.propTypes = {
-    data:{},
+    data:()=>{},
     setIsOpenModal: ()=>{},
-    isOpenModal: true
+    isOpenModal: ()=>{}
 };
 
 export default CardAnnouncment;

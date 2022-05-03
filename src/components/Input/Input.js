@@ -9,6 +9,7 @@ const Input = (props) => {
     const { name } = field;
     const { errors, touched } = form;
     const isError = touched[name] && errors[name];
+    
     return(
         <label className={classNameLabel}>
             {label}
@@ -29,16 +30,5 @@ Input.propTypes = {
  value: PropTypes.string,
  element: PropTypes.element
 };
-
-Input.defaultProps = {
- form: {},
- field: {},
- label: "",
- classNameLabel: "",
- className: "",
- value: "",
- element: null
-};
-
 
 export default Input;

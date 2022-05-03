@@ -14,7 +14,7 @@ import createActions from "../../store/createActions";
 
 
 
-const FormAnnouncment = () => {
+const FormCreateAnnouncment = () => {
     const { setData, getUrlPhoto, setIsOpen } = createActions;
     const dispatch = useDispatch();
     const { photo } = useSelector(state => state.form);
@@ -97,4 +97,4 @@ const FormAnnouncment = () => {
 };
 
 
-export default FormAnnouncment;
+export default FormCreateAnnouncment;
