@@ -15,7 +15,7 @@ const CustomTextArea = (props) => {
     const { error, touched } = meta;
     const isError = touched && error;
     const isDone = name === "description" && value.length > 22 && customnTextarea.disabled;
-        console.log(meta);
+    
     return (
         <div className={classNames(classNameLabel, styles.description)}>
             {label}

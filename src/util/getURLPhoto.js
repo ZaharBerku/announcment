@@ -7,6 +7,5 @@ export const getURLPhoto = (event, setPhoto) => {
         setPhoto(result);
     };
     reader.readAsDataURL(...files);
-    console.log(url);
     return url;
 };

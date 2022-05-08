@@ -13,7 +13,7 @@ export const getData = () => async dispatch => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer c0037d39-ae76-45c2-9c8b-6e489ae4cd05"
+        "Authorization": "Bearer 24371637-dab7-4d80-9650-20625be7689c"
       },
     }).then(res =>{
       return res.json();
@@ -31,7 +31,7 @@ export const setData = (body) => async dispatch => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer c0037d39-ae76-45c2-9c8b-6e489ae4cd05"
+        "Authorization": "Bearer 24371637-dab7-4d80-9650-20625be7689c"
       },
       body: JSON.stringify(body)
     }).then(response => response.json());
@@ -48,7 +48,7 @@ export const editData = (body, id) => async dispatch => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer c0037d39-ae76-45c2-9c8b-6e489ae4cd05"
+        "Authorization": "Bearer 24371637-dab7-4d80-9650-20625be7689c"
       },
       body: JSON.stringify(body)
     }).then(response => response.json());
@@ -63,7 +63,7 @@ export const deleteData = (id) => async dispatch =>{
      await fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
       method: "DELETE",
       headers: {
-        "Authorization": "Bearer c0037d39-ae76-45c2-9c8b-6e489ae4cd05"
+        "Authorization": "Bearer 24371637-dab7-4d80-9650-20625be7689c"
       },
     });
     dispatch({ type: DELETE_DATA, payload:id });
